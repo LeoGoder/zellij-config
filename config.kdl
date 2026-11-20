@@ -1,0 +1,21 @@
+// Thème
+theme "catppuccin-mocha"
+
+// Masquer la barre du bas (status-bar)
+bars_hidden_on_start "status-bar"
+
+// Pas de pop-up "about" / notes de version au lancement
+show_release_notes false
+
+// Tuer la session dès qu'on la quitte : fermeture du terminal (SIGHUP/SIGTERM)
+// et Ctrl q sans confirmation
+on_force_close "quit"
+on_quit "quit"
+
+// Ouvrir le mode Tab avec Ctrl+l au lieu de Ctrl+t
+keybinds {
+    unbind "Ctrl t"
+    shared_except "tab" "locked" {
+        bind "Ctrl l" { SwitchToMode "Tab"; }
+    }
+}
